@@ -12,11 +12,12 @@ echo "*"
 echo "*********************************************"
 echo ""
 
+version=2.52
 chromever=2.8
 chromedriverzip=chromedriver_linux64.zip
 chromedriverbin=chromedriver
-jarfile=selenium-server-standalone-2.39.0.jar
-wgetbin=/usr/bin/wget
+jarfile=selenium-server-standalone-2.52.0.jar
+wgetbin=/usr/local/bin/wget
 
 if [ -z "${JAVA_HOME+xxx}" ]; then
   echo JAVA_HOME is not set at all;
@@ -35,7 +36,7 @@ if [ ! -f $jarfile ]; then
     echo "Wget binary is found!"
     echo "Downloading Selenium standalone .jar file..."
     echo ""
-    $wgetbin --dot-style=binary http://selenium.googlecode.com/files/$jarfile
+    $wgetbin --dot-style=binary http://selenium-release.storage.googleapis.com/$version/$jarfile
   else
     echo "Wget.exe is missing."
     echo ""
