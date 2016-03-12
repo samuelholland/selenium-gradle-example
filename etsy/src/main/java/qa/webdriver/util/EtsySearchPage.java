@@ -18,7 +18,7 @@ public class EtsySearchPage extends LoadableComponent<EtsySearchPage> {
 	public ESPFluentInterface espfi;
 	public static final String searchFieldName = "search_query";
 	public static final String searchButtonName = "search_submit";
-	public static final String suggestIons = "div.nav-search-text div#search-suggestions ul li";
+	public static final String suggestIons = "div#search-suggestions ul li";
 
 	@FindBy(name = searchFieldName ) public WebElement searchField;
 	@FindBy(name = searchButtonName ) public WebElement searchButton;
@@ -99,7 +99,7 @@ public class EtsySearchPage extends LoadableComponent<EtsySearchPage> {
 	public void clickEtsyLogo() {
 		LOGGER.info("Click Etsy logo...");
 		WebElement logo = null;
-		By locator = By.cssSelector( "h1#etsy a" );
+		By locator = By.cssSelector( "#etsy-logo" );
 		logo = getElementByLocator( locator );
 		logo.click();
 		waitTimer(2, 1000);
